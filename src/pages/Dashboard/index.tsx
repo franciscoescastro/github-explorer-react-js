@@ -7,12 +7,11 @@ import logoImg from '../../assets/logo.svg'
 
 interface Repository {
   full_name: string
+  description: string
   owner: {
     login: string
     avatar_url: string
   }
-  html_url: string
-  description: string
 }
 
 const Dashboard: React.FC = () => {
@@ -78,7 +77,7 @@ const Dashboard: React.FC = () => {
             key={repository.full_name}
             to={`/repositories/${repository.full_name}`}
           >
-            <img src={repository.owner.avatar_url} alt={repository.html_url} />
+            <img src={repository.owner.avatar_url} alt={repository.full_name} />
             <div>
               <strong>{repository.full_name}</strong>
               <p>{repository.description}</p>
